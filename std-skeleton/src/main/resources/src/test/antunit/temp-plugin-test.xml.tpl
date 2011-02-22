@@ -15,27 +15,27 @@
    limitations under the License.
 -->
 <project name="@project.organisation@;@project.module@-test" xmlns:au="antlib:org.apache.ant.antunit">
-	
-	<!-- Defines a setUp / tearDown (before each test) that cleans the environnement --> 
-	<target name="clean" description="remove stale build artifacts before / after each test">
-		<delete dir="${basedir}" includeemptydirs="true">
-			<include name="**/target/**"/>
-			<include name="**/lib/**"/>
-		</delete>
-	</target>
-	
-	<target name="setUp" depends="clean"/>
-	<target name="tearDown" depends="clean"/>
-	
-	<!--
-		A sample ant unit test case, 
-		see the antunit official documentation for more informations
-		
-		<target name="testSample" description="a sample of ant unit test case">
-			<au:assertTrue>
-				<matches string="abc" pattern="abc"/>
-			</au:assertTrue>
-		</target>
-	-->
+    
+    <!-- Defines a setUp / tearDown (before each test) that cleans the environnement --> 
+    <target name="clean" description="remove stale build artifacts before / after each test">
+        <delete dir="${basedir}" includeemptydirs="true">
+            <include name="**/target/**"/>
+            <include name="**/lib/**"/>
+        </delete>
+    </target>
+    
+    <target name="setUp" depends="clean"/>
+    <target name="tearDown" depends="clean"/>
+    
+    <!--
+        A sample ant unit test case, 
+        see the antunit official documentation for more informations
+        
+        <target name="testSample" description="a sample of ant unit test case">
+            <au:assertTrue>
+                <matches string="abc" pattern="abc"/>
+            </au:assertTrue>
+        </target>
+    -->
 
 </project>
