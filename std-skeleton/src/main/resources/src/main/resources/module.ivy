@@ -20,6 +20,6 @@
         <!--
         <description>YOUR SKELETON DESCRIPTION GOES HERE</description>
         -->
-        <ea:build module="build-std-skeleton" revision="0.1"/>
+        <ea:build module="build-std-skeleton" revision="0.9"/>
     </info>
 </ivy-module>

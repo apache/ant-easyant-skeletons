@@ -23,12 +23,12 @@
             <project name="@project.organisation@;@project.module@"
                 xmlns:ea="antlib:org.apache.easyant">
                 
-                <ea:import organisation="org.apache.easyant.buildtypes" module="build-std-ant-plugin" revision="0.1"/>
+                <ea:import organisation="org.apache.easyant.buildtypes" module="build-std-ant-plugin" revision="0.9"/>
             </project>              
           -->
         <!-- note that in a module.ivy the organisation attribute is not mandatory
             if not specified easyant will use the default organisation for build type / plugin -->
-        <ea:build organisation="org.apache.easyant.buildtypes" module="build-std-ant-plugin" revision="0.1"/>
+        <ea:build organisation="org.apache.easyant.buildtypes" module="build-std-ant-plugin" revision="0.9"/>
     </info>
     <configurations>
         <conf name="default" visibility="public" description="runtime dependencies artifact can be used with this conf"/>
@@ -36,8 +36,8 @@
         <conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
     </configurations>
     <publications>
-                <artifact name="@project.module@" type="ant"/>
-        </publications>
+        <artifact name="@project.module@" type="ant"/>
+    </publications>
 
     <dependencies>
         <!-- your project dependencies goes here -->

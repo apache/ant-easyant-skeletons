@@ -14,14 +14,18 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<project name="@project.organisation@;@project.module@-test" xmlns:au="antlib:org.apache.ant.antunit">
+<project name="@project.organisation@;@project.module@-test" 
+    xmlns:au="antlib:org.apache.ant.antunit"
+    xmlns:ivy="antlib:org.apache.ivy.ant"
+    xmlns:ea="antlib:org.apache.easyant">
     
-    <!-- Mocking required phase --> 
-    <phase name="validate"/>
-        
-    <!-- Import your plugin --> 
-    <import file="../../main/resources/@project.module@.ant"/>
-    
+    <!-- Import your plugin -->
+    <property name="target" value="target/test-antunit"/>
+    <!-- configure easyant in current project -->
+    <ea:configure-easyant-ivy-instance />
+    <!-- import our local plugin -->
+    <ea:import-test-module moduleIvy="../../../module.ivy" sourceDirectory="../../main/resources"/>
+ 
     <!-- Defines a setUp / tearDown (before each test) that cleans the environnement --> 
     <target name="clean" description="remove stale build artifacts before / after each test">
         <delete dir="${basedir}" includeemptydirs="true">
@@ -34,8 +38,7 @@
     <target name="tearDown" depends="clean"/>
     
     <!-- init test case -->         
-    <target name="testInit">
-        <antcall target=":init"/>
+    <target name="test-@project.module@:init" depends="@project.module@:init">
         <au:assertLogContains level="debug" text="This is the init target of @project.module@"/>
     </target>
     
@@ -43,7 +46,7 @@
         A sample ant unit test case, 
         see the antunit official documentation for more informations
         
-        <target name="testSample" description="a sample of ant unit test case">
+        <target name="test-@project.module@:sample" description="a sample of ant unit test case">
             <au:assertTrue>
                 <matches string="abc" pattern="abc"/>
             </au:assertTrue>

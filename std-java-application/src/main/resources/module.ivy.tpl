@@ -23,12 +23,12 @@
             <project name="@project.organisation@;@project.module@"
                 xmlns:ea="antlib:org.apache.easyant">
                 
-                <ea:import organisation="org.apache.easyant.buildtypes" module="build-std-java" revision="0.2"/>
+                <ea:import organisation="org.apache.easyant.buildtypes" module="build-std-java" revision="0.9"/>
             </project>              
           -->
         <!-- note that in a module.ivy the organisation attribute is not mandatory
             if not specified easyant will use the default organisation for build type / plugin -->
-        <ea:build organisation="org.apache.easyant.buildtypes" module="build-std-java" revision="0.2"/>
+        <ea:build organisation="org.apache.easyant.buildtypes" module="build-std-java" revision="0.9"/>
     </info>
     <configurations>
         <conf name="default" visibility="public" description="runtime dependencies artifact can be used with this conf"/>

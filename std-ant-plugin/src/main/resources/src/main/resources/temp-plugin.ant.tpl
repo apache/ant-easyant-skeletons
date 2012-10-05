@@ -24,11 +24,9 @@
     -->
     
     <!-- Sample init target -->
-    <target name=":init" phase="validate">
+    <target name="@project.module@:init">
         <!-- you should  remove this echo message -->
         <echo level="debug">This is the init target of @project.module@</echo>
     </target>
     
-    <!-- define a generic default target for this plugin -->
-    <target name="doit" depends="validate"/>
 </project>
