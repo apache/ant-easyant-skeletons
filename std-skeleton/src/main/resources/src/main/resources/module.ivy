@@ -22,4 +22,7 @@
         -->
         <ea:build module="build-std-skeleton" revision="0.9"/>
     </info>
+    <publications>
+        <artifact type="ant" />
+    </publications>
 </ivy-module>

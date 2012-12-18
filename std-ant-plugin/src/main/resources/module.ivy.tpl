@@ -38,7 +38,6 @@
     <publications>
         <artifact name="@project.module@" type="ant"/>
     </publications>
-
     <dependencies>
         <!-- your project dependencies goes here -->
         <!--

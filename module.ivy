@@ -15,13 +15,8 @@
    limitations under the License.
 -->
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org">
-    <info organisation="org.apache.easyant.skeletons" module="std-java-webapplication" status="integration"
-        revision="0.9">
-        <description>Skeleton for creating standard java web application</description>
-        <extends organisation="org.apache.easyant.skeletons" module="skeleton-plugin" revision="0.1"/>
-        <ea:build module="build-std-skeleton" revision="0.9" />
+    <info organisation="org.apache.easyant.skeletons" module="skeletons-orchestrator" revision="0.1">
+        <description>This module acts as orchestrator to build all easyant skeletons.</description>
+        <ea:build module="meta-build" revision="0.9" />
     </info>
-    <publications>
-        <artifact type="ant" />
-    </publications>
 </ivy-module>
