@@ -14,10 +14,20 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<ivy-module version="2.0" xmlns:ea="http://www.easyant.org">
-    <info organisation="org.apache.easyant.skeletons" module="std-skeleton" status="integration" revision="0.9">
-        <extends organisation="org.apache.easyant.skeletons" module="parent-skeleton" revision="0.1" location="../parent.ivy" />
-        <description>Emtpy skeleton structure</description>
-        <ea:build module="build-std-skeleton" revision="0.9" />
-    </info>
-</ivy-module>
+<ivysettings>
+    <settings defaultResolver="main" />
+    <caches defaultCacheDir="${user.home}/.easyant/easyant-cache" />
+
+    <resolvers>
+        <!-- Maven central -->
+        <ibiblio name="maven2" m2compatible="true" />
+        <chain name="main" returnFirst="true">
+            <resolver ref="maven2" />
+        </chain>
+
+        <filesystem name="easyant-shared-modules" descriptor="required">
+            <ivy pattern="${user.home}/.easyant/repository/easyant-shared-modules/[organisation]/[module]/[revision]/[module].ivy"/>
+            <artifact pattern="${user.home}/.easyant/repository/easyant-shared-modules/[organisation]/[module]/[revision]/[artifact](-[classifier]).[ext]"/>
+        </filesystem>
+    </resolvers>
+</ivysettings>
